@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Company</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        form div {
+            margin-bottom: 15px;
+        }
+        form label {
+            display: block;
+            font-weight: bold;
+        }
+        form input[type="text"],
+        form input[type="url"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .home-button {
+            background-color: #6c757d;
+        }
+        .home-button:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <h1>Register Company</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label for="id_name">Name:</label>
+            {{ form.name }}
+        </div>
+        <div>
+            <label for="id_address">Address:</label>
+            {{ form.address }}
+        </div>
+        <div>
+            <label for="id_website">Website:</label>
+            {{ form.website }}
+        </div>
+        <button type="submit">Register</button>
+       
+    </form>
+</body>
+</html>

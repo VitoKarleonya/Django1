@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register House</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 50px;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Register House</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label for="city">City:</label>
+            {{ form.city }}
+        </div>
+        <div>
+            <label for="street">Street:</label>
+            {{ form.street }}
+        </div>
+        <div>
+            <label for="house_number">House Number:</label>
+            {{ form.house_number }}
+        </div>
+        <div>
+            <label for="entrances">Number of Entrances:</label>
+            {{ form.entrances }}
+        </div>
+        <div>
+            <label for="apartments_per_entrance">Apartments per Entrance:</label>
+            {{ form.apartments_per_entrance }}
+        </div>
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
